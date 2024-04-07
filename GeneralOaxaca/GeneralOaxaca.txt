@@ -1,0 +1,38 @@
+# Olah Data Semarang
+# WhatsApp : +6285227746673
+# IG : @olahdatasemarang_
+# General Blinder Oaxaca Decomposition Use Package GeneralOaxaca With (In) R Software
+# Install General Blinder Oaxaca Decomposition Use Package GeneralOaxaca With (In) R Software
+install.packages("readxl")
+install.packages("httr")
+install.packages("GeneralOaxaca")
+library("httr")
+library("readxl")
+library("GeneralOaxaca")
+# Import Data Excel Into R From Github Olah Data Semarang (timbulwidodostp)
+github_link <- "https://github.com/timbulwidodostp/GeneralOaxaca/raw/main/GeneralOaxaca/GeneralOaxaca.xlsx"
+temp_file <- tempfile(fileext = ".xlsx")
+req <- GET(github_link, 
+# authenticate using GITHUB_PAT
+authenticate(Sys.getenv("GITHUB_PAT"), ""),
+# write result to disk
+write_disk(path = temp_file))
+GeneralOaxaca <- readxl::read_excel(temp_file)
+# General Blinder Oaxaca Decomposition Use Package GeneralOaxaca With (In) R Software
+formula=ln.real.wage~ age + female + LTHS + some.college + college + advanced.degree
+BO_A1 <- GeneralOaxaca(formula,  family= Gamma, data=GeneralOaxaca, groupInd=GeneralOaxaca$foreign.born,B=100)
+BO_A1$twofold
+GeneralOaxaca$real.wage=exp(GeneralOaxaca$ln.real.wage)
+formula=ln.real.wage~ age + female + LTHS + some.college + college + 
+advanced.degree
+# example with gamma distribution
+BO_A2 <- GeneralOaxaca(formula,  family= Gamma, data=GeneralOaxaca, 
+groupInd=GeneralOaxaca$foreign.born,B=100)
+BO_A2$twofold 
+BO_A2$regoutput$GroupA
+BO_A2$threefold
+# General Blinder Oaxaca Decomposition Use Package GeneralOaxaca With (In) R Software
+# Olah Data Semarang
+# WhatsApp : +6285227746673
+# IG : @olahdatasemarang_
+# Finished
