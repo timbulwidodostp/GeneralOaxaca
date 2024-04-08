@@ -1,6 +1,8 @@
 # GeneralOaxaca
 General Blinder Oaxaca Decomposition Use Package GeneralOaxaca With (In) R Software
 
+https://www.youtube.com/watch?v=hoAm_K-uBb0
+
 Olah Data Semarang
 
 WA : +6285227746673 (085227746673)
